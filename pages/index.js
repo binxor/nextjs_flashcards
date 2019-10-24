@@ -2,76 +2,90 @@ import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Card from '../components/card'
+import Button from '../components/button'
 import data from '../data/authentication.json'
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel='icon' href='/favicon.ico' />
-    </Head>
+class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { clickCounter: 0, cardData: data[Math.floor(Math.random()*6)] }
+    this.shuffleCard = this.shuffleCard.bind(this)
+  }
 
-    <Nav />
-    
-    <div className='hero'>
-      <h1 className='title'>Learn Shit!</h1>
-      <p className='description'>
-        Click the card to see the answer.
-      </p>
+  shuffleCard() {
+    this.setState({ clickCounter: this.state.clickCounter + 1, cardData: data[Math.floor(Math.random()*6)] })
+  }
 
-      <div className='row'>
-        <Card data={data[Math.floor(Math.random()*6)]} />
-        
+  render() {
+    return <div>
+      <Head>
+        <title>Home</title>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+
+      <Nav />
+      
+      <div className='hero'>
+        <h1 className='title'>Learn Shit!</h1>
+        <p className='description'>
+          Click the card to see the answer. {this.state.clickCounter}
+        </p>
+        <div className='row'>
+          <Button label='Next' onClick={this.shuffleCard}></Button>
+        </div>
+        <div className='row'>
+          <Card id={this.state.clickCounter} data={this.state.cardData} />
+        </div>
       </div>
-    </div>
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
+      <style jsx>{`
+        .hero {
+          width: 100%;
+          color: #333;
+        }
+        .title {
+          margin: 0;
+          width: 100%;
+          padding-top: 80px;
+          line-height: 1.15;
+          font-size: 48px;
+        }
+        .title,
+        .description {
+          text-align: center;
+        }
+        .row {
+          max-width: 880px;
+          margin: 20px auto 30px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .card {
+          padding: 18px 18px 24px;
+          width: 220px;
+          text-align: left;
+          text-decoration: none;
+          color: #434343;
+          border: 1px solid #9b9b9b;
+        }
+        .card:hover {
+          border-color: #067df7;
+        }
+        .card h3 {
+          margin: 0;
+          color: #067df7;
+          font-size: 18px;
+        }
+        .card p {
+          margin: 0;
+          padding: 12px 0 0;
+          font-size: 13px;
+          color: #333;
+        }
+      `}</style>
+    </div>
+  }
+}
 
 export default Home

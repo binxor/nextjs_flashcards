@@ -10,7 +10,7 @@
   {
     "scheme": "Bearer Token",
     "spec": "RFC 6750",
-    "method": "",
+    "method": "Uses Bearer tokens in HTTP requests to access OAuth 2.0 protected resources.  Any party in possession of a bearer token (a \"bearer\") can use it to get access to the associated resources (without demonstrating possession of a cryptographic key).",
     "isSecure": "",
     "passedOverNetworkAs": "",
     "limitations": ""
@@ -18,7 +18,7 @@
   {
     "scheme": "Digest",
     "spec": "RFC 7616",
-    "method": "",
+    "method": "A simple challenge-response HTTP authentication mechanism that may be used by a server to challenge a client request and by a client to provide authentication information.",
     "isSecure": "",
     "passedOverNetworkAs": "",
     "limitations": ""
@@ -26,7 +26,7 @@
   {
     "scheme": "HOBA (HTTP Origin-Bound Authentication",
     "spec": "RFC 7486",
-    "method": "",
+    "method": "Digital-signature-based design for an HTTP authentication.  Since it does not use passwords, it is not subject to password leakage.",
     "isSecure": "",
     "passedOverNetworkAs": "",
     "limitations": ""
@@ -34,7 +34,7 @@
   {
     "scheme": "Mutual",
     "spec": "RFC 8120",
-    "method": "",
+    "method": "Provides true mutual authentication between an HTTP client and an HTTP server using password-based authentication.  Unlike the Basic and Digest authentication schemes, the Mutual authentication scheme specified in this document assures the user that the server truly knows the user's encrypted password.",
     "isSecure": "",
     "passedOverNetworkAs": "",
     "limitations": ""
@@ -42,7 +42,7 @@
   {
     "scheme": "AWS4-HMAC-SHA256",
     "spec": "AWS",
-    "method": "",
+    "method": "Also known as Signature Version 4, (\"V4\") is one of two authentication schemes supported by S3.  All Amazon S3 operations use the Authorization request header to provide authentication information, except for POST requests and requests that are signed by using query parameters.",
     "isSecure": "",
     "passedOverNetworkAs": "",
     "limitations": ""

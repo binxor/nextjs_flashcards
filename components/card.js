@@ -7,6 +7,10 @@ class CardClass extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentWillReceiveProps() {
+    this.setState( { showFront: true })
+  }
+
   handleClick() {
     this.setState( { showFront: !this.state.showFront })
   }
