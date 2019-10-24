@@ -1,0 +1,50 @@
+[
+  {
+    "scheme": "Basic HTTP Authentication",
+    "spec": "RFC 7617",
+    "method": "Transmits credentials as user ID/password pairs, encoded using base64.",
+    "isSecure": "No",
+    "passedOverNetworkAs": "Clear text with reversible base64 encoding.",
+    "limitations": "Should be used with HTTPS/TLS in order to protect sensitive or valuable information."
+  },
+  {
+    "scheme": "Bearer Token",
+    "spec": "RFC 6750",
+    "method": "",
+    "isSecure": "",
+    "passedOverNetworkAs": "",
+    "limitations": ""
+  },
+  {
+    "scheme": "Digest",
+    "spec": "RFC 7616",
+    "method": "",
+    "isSecure": "",
+    "passedOverNetworkAs": "",
+    "limitations": ""
+  },
+  {
+    "scheme": "HOBA (HTTP Origin-Bound Authentication",
+    "spec": "RFC 7486",
+    "method": "",
+    "isSecure": "",
+    "passedOverNetworkAs": "",
+    "limitations": ""
+  },
+  {
+    "scheme": "Mutual",
+    "spec": "RFC 8120",
+    "method": "",
+    "isSecure": "",
+    "passedOverNetworkAs": "",
+    "limitations": ""
+  },
+  {
+    "scheme": "AWS4-HMAC-SHA256",
+    "spec": "AWS",
+    "method": "",
+    "isSecure": "",
+    "passedOverNetworkAs": "",
+    "limitations": ""
+  }
+]
