@@ -25,35 +25,13 @@ class CardClass extends React.Component {
     return <>
       <div className='card' onClick={this.handleClick}>
         <h3>{this.props.data.scheme} &rarr;</h3>
-        <p>{content}</p>
+        <p><div className='content'>{content}</div></p>
         <p>{this.props.data.spec}</p>
       </div>
       <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
       .card {
         padding: 18px 18px 24px;
-        width: 440px;
+        width: 75%;
         text-align: left;
         text-decoration: none;
         color: #434343;
@@ -61,17 +39,21 @@ class CardClass extends React.Component {
       }
       .card:hover {
         border-color: #067df7;
+        cursor: pointer;
       }
       .card h3 {
         margin: 0;
         color: #067df7;
-        font-size: 22px;
+        font-size: 30px;
       }
       .card p {
         margin: 0;
         padding: 12px 0 0;
-        font-size: 13px;
+        font-size: 20px;
         color: #333;
+      }
+      .card * .content {
+        height: 120px;
       }
     `}</style>
     </>

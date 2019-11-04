@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Nav from '../components/nav'
 import Card from '../components/card'
 import Button from '../components/button'
-import data from '../data/authentication.json'
+import data from '../data/flashcardData.json'
 
 class Home extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Home extends React.Component {
       <Nav />
       
       <div className='hero'>
-        <h1 className='title'>Learn Shit!</h1>
+        <h1 className='title'>Learn It!</h1>
         <p className='description'>
           Click the card to see the answer. {this.state.clickCounter}
         </p>
@@ -60,28 +60,6 @@ class Home extends React.Component {
           display: flex;
           flex-direction: row;
           justify-content: space-around;
-        }
-        .card {
-          padding: 18px 18px 24px;
-          width: 220px;
-          text-align: left;
-          text-decoration: none;
-          color: #434343;
-          border: 1px solid #9b9b9b;
-        }
-        .card:hover {
-          border-color: #067df7;
-        }
-        .card h3 {
-          margin: 0;
-          color: #067df7;
-          font-size: 18px;
-        }
-        .card p {
-          margin: 0;
-          padding: 12px 0 0;
-          font-size: 13px;
-          color: #333;
         }
       `}</style>
     </div>
